@@ -1,35 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// PascalCase
 
-function App() {
-  const [count, setCount] = useState(0)
+export function App() { // Exportar o Funcion é mais fácil
+    console.log("Hello");
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    // O que aparecerá na página
+    // Quando se há mais de uma linha no retorno coloque entre parênteses os elementos
+    return (
+        // Só é possível retornar UM elemento pai no jsx/tsx
+        <> {/*Isso é um React Fragment, basicamente uma tag vazia que é pais de todos os itens
+        desse componente. OBS: ela não aparece como elemento no inspencionar do navegador */}
+            <h1>Hello World (do App)</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing
+                elit. Laborum aspernatur iure deserunt beatae doloru
+                m! Aliquam dolore doloribus voluptates quibusdam libero, sapiente,
+                tenetur sint similique placeat eveniet optio quaerat iusto tempore.
+            </p>
+        </>
+    );
 }
-
-export default App
+// Exportar o componente do React
+// export default App - pode-se colocar qualquer nome para o componente na hora de importar
+//export { App }; // O componente irá se chamar App obrigatoriamete
