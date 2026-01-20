@@ -1,6 +1,7 @@
 import './styles/global.css'
-import './styles/theme.css'
 
+import { Heading } from './components/Heading';
+import './styles/theme.css'
 // PascalCase
 export function App() { // Exportar o Funcion é mais fácil
     console.log("Hello");
@@ -10,7 +11,7 @@ export function App() { // Exportar o Funcion é mais fácil
         // Só é possível retornar UM elemento pai no jsx/tsx
         <> {/*Isso é um React Fragment, basicamente uma tag vazia que é pais de todos os itens
         desse componente. OBS: ela não aparece como elemento no inspencionar do navegador */}
-            <h1>Hello World (from App)</h1>
+            <Heading />
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing
                 elit. Laborum aspernatur iure deserunt beatae doloru
                 m! Aliquam dolore doloribus voluptates quibusdam libero, sapiente,
