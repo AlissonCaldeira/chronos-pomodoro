@@ -4,7 +4,7 @@ import { Heading } from './components/Heading';
 import './styles/theme.css'
 // PascalCase
 export function App() { // Exportar o Funcion é mais fácil
-    console.log("Hello");
+
     // O que aparecerá na página
     // Quando se há mais de uma linha no retorno coloque entre parênteses os elementos
     return (
