@@ -1,8 +1,8 @@
 import './styles/global.css'
 
-import { Heading } from './components/Heading';
+
 import './styles/theme.css'
-import { TimerIcon } from 'lucide-react';
+
 // PascalCase
 export function App() { // Exportar o Funcion é mais fácil
 
@@ -12,17 +12,34 @@ export function App() { // Exportar o Funcion é mais fácil
         // Só é possível retornar UM elemento pai no jsx/tsx
         <> {/*Isso é um React Fragment, basicamente uma tag vazia que é pais de todos os itens
         desse componente. OBS: ela não aparece como elemento no inspencionar do navegador */}
-            <Heading >
-                Hello World (from App)
-                <button>
-                    < TimerIcon />
-                </button>
-            </Heading>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing
-                elit. Laborum aspernatur iure deserunt beatae doloru
-                m! Aliquam dolore doloribus voluptates quibusdam libero, sapiente,
-                tenetur sint similique placeat eveniet optio quaerat iusto tempore.
-            </p>
+            <div className="container">
+                <div className="content">
+                    <section>LOGO</section>
+                </div>
+            </div>
+            <div className="container">
+                <div className="content">
+                    <section>MENU</section>
+                </div>
+            </div>
+            <div className="container">
+                <div className="content">
+                    <section>FORM</section>
+                </div>
+            </div>
+            <div className="container">
+                <div className="content">
+                    <section>FOOTER</section>
+                </div>
+            </div>
+            { /* Fins didáticos
+            <div className="container-fluid">
+                <div className="container">
+                    <div className="content">
+                        <section>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae laborum maxime hic sed quisquam, fugiat doloribus iure. Blanditiis alias, nesciunt asperiores earum corrupti ipsum placeat, nemo sed magnam corporis suscipit.</section>
+                    </div>
+                </div>
+            </div>*/}
         </>
     );
 }
