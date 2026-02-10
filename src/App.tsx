@@ -2,6 +2,7 @@ import './styles/global.css'
 
 import { Heading } from './components/Heading';
 import './styles/theme.css'
+import { TimerIcon } from 'lucide-react';
 // PascalCase
 export function App() { // Exportar o Funcion é mais fácil
 
@@ -11,8 +12,11 @@ export function App() { // Exportar o Funcion é mais fácil
         // Só é possível retornar UM elemento pai no jsx/tsx
         <> {/*Isso é um React Fragment, basicamente uma tag vazia que é pais de todos os itens
         desse componente. OBS: ela não aparece como elemento no inspencionar do navegador */}
-            <Heading attr={123} attr2='String'>
+            <Heading >
                 Hello World (from App)
+                <button>
+                    < TimerIcon />
+                </button>
             </Heading>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing
                 elit. Laborum aspernatur iure deserunt beatae doloru
