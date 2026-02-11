@@ -1,6 +1,7 @@
+
+import { Container } from './components/Container';
+import { Heading } from './components/Heading';
 import './styles/global.css'
-
-
 import './styles/theme.css'
 
 // PascalCase
@@ -11,27 +12,19 @@ export function App() { // Exportar o Funcion é mais fácil
     return (
         // Só é possível retornar UM elemento pai no jsx/tsx
         <> {/*Isso é um React Fragment, basicamente uma tag vazia que é pais de todos os itens
-        desse componente. OBS: ela não aparece como elemento no inspencionar do navegador */}
-            <div className="container">
-                <div className="content">
-                    <section>LOGO</section>
-                </div>
-            </div>
+        dess
             <div className="container">
                 <div className="content">
                     <section>MENU</section>
-                </div>
-            </div>
-            <div className="container">
-                <div className="content">
-                    <section>FORM</section>
-                </div>
-            </div>
-            <div className="container">
-                <div className="content">
-                    <section>FOOTER</section>
-                </div>
-            </div>
+                </div>e componente. OBS: ela não aparece como elemento no inspencionar do navegador */}
+            <Container>
+                <Heading>LOGO</Heading>
+            </Container>
+            <Container>
+                <Heading>Menu</Heading>
+            </Container>
+
+
             { /* Fins didáticos
             <div className="container-fluid">
                 <div className="container">
