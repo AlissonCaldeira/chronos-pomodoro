@@ -3,6 +3,7 @@ import styles from './Heading.module.css'
 
 type HeadingProps = {
     children: React.ReactNode // Recomendável utilizar com children no react
+    // 
 };
 
 export function Heading(/*props*/{ children }: HeadingProps) {

@@ -17,15 +17,3 @@ body{
 }
 
 
-.container-fluid{
-    max-width: auto;
-}
-
-.container{
-    max-width: 980px;
-    margin: 0 auto;
-}
-
-.content{
-    margin: 32px;
-}
