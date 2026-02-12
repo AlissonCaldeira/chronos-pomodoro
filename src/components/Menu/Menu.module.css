@@ -1,0 +1,27 @@
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.menuLink{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition:all 0.1s ease-in-out; /*Coloca uma transição quando há uma alteração no 
+    texto*/
+    border-radius: 8px;
+    background-color: var(--primary);
+    color: var(--text-over-primary);
+    padding: 12px; /*Da um preenchimento a mais no background do elemento*/
+}
+
+.menuLink:hover{
+    filter:brightness(80%); /*Altera a cor aplicando o filtro quando passa o mouse por cima*/
+}
+
+.menuLink svg{ /*Para estilizar o ícone*/
+    width: 25px;
+    height: 25px;
+}
