@@ -1,7 +1,6 @@
 
 import { Container } from './components/Container';
 import { CountDown } from './components/CountDown';
-import { Heading } from './components/Heading';
 import { Logo } from './components/Logo';
 import { Menu } from './components/Menu';
 
@@ -30,6 +29,25 @@ export function App() { // Exportar o Funcion é mais fácil
             <Container>
                 <CountDown />
             </Container>
+            <Container>
+                <form className='form' action="">
+                    <div className="formRow">
+                        <label htmlFor="input">task</label>
+                        <input id='input' type="text" />
+                    </div>
+                    <div className="formRow">
+                        <span>Lorem ipsum dolor sit amet.</span>
+                    </div>
+                    <div className="formRow">
+                        <p>ciclos</p>
+                        <p>0 0 0 0 0 0</p>
+                    </div>
+                    <div className="formRow">
+                        <button>enviar</button>
+                    </div>
+                </form>
+            </Container>
+
 
             { /* Fins didáticos
             <div className="container-fluid">
