@@ -1,0 +1,9 @@
+.container{
+    font-size:clamp(80px, 30vw, 160px); 
+    /*O clamp garante um valor mínimo e máximo de tamanho indicados pelos valores
+    nas extremidades. O valor do meio seria equivalente a atribuir ele para ser o tamanho
+    só que ele será limitado pelos motivos já citados*/
+    font-weight: bold;
+    text-align: center;
+    height: 13px;;
+}

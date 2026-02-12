@@ -1,5 +1,6 @@
 
 import { Container } from './components/Container';
+import { CountDown } from './components/CountDown';
 import { Heading } from './components/Heading';
 import { Logo } from './components/Logo';
 import { Menu } from './components/Menu';
@@ -26,7 +27,9 @@ export function App() { // Exportar o Funcion é mais fácil
             <Container>
                 <Menu />
             </Container>
-
+            <Container>
+                <CountDown />
+            </Container>
 
             { /* Fins didáticos
             <div className="container-fluid">
