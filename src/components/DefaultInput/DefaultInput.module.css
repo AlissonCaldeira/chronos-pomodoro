@@ -1,0 +1,30 @@
+.input{
+    background-color:transparent;
+    border:none;
+    font-size:18px;
+    padding:8px;
+    text-align:center;
+    color: var(--text-default);
+    outline: none;
+
+    border:2px solid transparent; /*Faz o input não ficar um pouco mais abaixo quando clicado por já existir a borda antes*/
+    border-bottom: 2px solid var(--primary);
+
+    transition:all ease-in-out 0.1s;
+}
+
+.input:focus/*Quando o input é clicado*/{
+    border:2px solid var(--primary);
+    border-radius: 8px;
+}
+
+.input:disabled{
+    border-bottom:2px solid var(--disabled) ;
+    colocar:var(--text-muted);
+}
+
+input::placeholder{
+    color: var(--gray-500);
+    font-size: 14px;
+    font-style:italic;
+}
