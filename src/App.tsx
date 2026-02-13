@@ -1,6 +1,7 @@
 
 import { Container } from './components/Container';
 import { CountDown } from './components/CountDown';
+import { Cycles } from './components/Cycles';
 import { DefaultInput } from './components/DefaultInput';
 import { Logo } from './components/Logo';
 import { Menu } from './components/Menu';
@@ -33,14 +34,13 @@ export function App() { // Exportar o Funcion é mais fácil
             <Container>
                 <form className='form' action="">
                     <div className="formRow">
-                        <DefaultInput id='meuInput' type='text' />
+                        <DefaultInput id='meuInput' labelText='Task' type='text' placeholder='Digite Algo' />
                     </div>
                     <div className="formRow">
                         <span>Lorem ipsum dolor sit amet.</span>
                     </div>
                     <div className="formRow">
-                        <p>ciclos</p>
-                        <p>0 0 0 0 0 0</p>
+                        <Cycles />
                     </div>
                     <div className="formRow">
                         <button>enviar</button>
