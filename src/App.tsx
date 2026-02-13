@@ -1,4 +1,6 @@
 
+import { PlayCircleIcon, StopCircleIcon } from 'lucide-react';
+import { Button } from './components/Button/Button';
 import { Container } from './components/Container';
 import { CountDown } from './components/CountDown';
 import { Cycles } from './components/Cycles';
@@ -43,7 +45,8 @@ export function App() { // Exportar o Funcion é mais fácil
                         <Cycles />
                     </div>
                     <div className="formRow">
-                        <button>enviar</button>
+                        <Button icon={<PlayCircleIcon />} color='green' />
+                        <Button icon={<StopCircleIcon />} color='red' />
                     </div>
                 </form>
             </Container>
