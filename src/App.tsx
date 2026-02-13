@@ -1,5 +1,5 @@
 
-import { PlayCircleIcon, StopCircleIcon } from 'lucide-react';
+import { PlayCircleIcon } from 'lucide-react';
 import { Button } from './components/Button/Button';
 import { Container } from './components/Container';
 import { CountDown } from './components/CountDown';
@@ -10,6 +10,7 @@ import { Menu } from './components/Menu';
 
 import './styles/global.css'
 import './styles/theme.css'
+import { Footer } from './components/Footer';
 
 // PascalCase
 export function App() { // Exportar o Funcion é mais fácil
@@ -45,10 +46,12 @@ export function App() { // Exportar o Funcion é mais fácil
                         <Cycles />
                     </div>
                     <div className="formRow">
-                        <Button icon={<PlayCircleIcon />} color='green' />
-                        <Button icon={<StopCircleIcon />} color='red' />
+                        <Button icon={<PlayCircleIcon />} />
                     </div>
                 </form>
+            </Container>
+            <Container>
+                <Footer />
             </Container>
 
 
