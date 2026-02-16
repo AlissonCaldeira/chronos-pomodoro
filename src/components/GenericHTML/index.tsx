@@ -1,0 +1,1 @@
+export {GenericHTML} from './GenericHTML'
