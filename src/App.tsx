@@ -1,16 +1,8 @@
+import { Home } from './pages/Home';
 
-import { PlayCircleIcon } from 'lucide-react';
-import { Button } from './components/Button/Button';
-import { Container } from './components/Container';
-import { CountDown } from './components/CountDown';
-import { Cycles } from './components/Cycles';
-import { DefaultInput } from './components/DefaultInput';
-import { Logo } from './components/Logo';
-import { Menu } from './components/Menu';
 
 import './styles/global.css'
 import './styles/theme.css'
-import { Footer } from './components/Footer';
 
 // PascalCase
 export function App() { // Exportar o Funcion é mais fácil
@@ -25,35 +17,7 @@ export function App() { // Exportar o Funcion é mais fácil
                 <div className="content">
                     <section>MENU</section>
                 </div>e componente. OBS: ela não aparece como elemento no inspencionar do navegador */}
-            <Container>
-                <Logo />
-            </Container>
-            <Container>
-                <Menu />
-            </Container>
-            <Container>
-                <CountDown />
-            </Container>
-            <Container>
-                <form className='form' action="">
-                    <div className="formRow">
-                        <DefaultInput id='meuInput' labelText='Task' type='text' placeholder='Digite Algo' />
-                    </div>
-                    <div className="formRow">
-                        <span>Lorem ipsum dolor sit amet.</span>
-                    </div>
-                    <div className="formRow">
-                        <Cycles />
-                    </div>
-                    <div className="formRow">
-                        <Button icon={<PlayCircleIcon />} />
-                    </div>
-                </form>
-            </Container>
-            <Container>
-                <Footer />
-            </Container>
-
+           <Home />
 
             { /* Fins didáticos
             <div className="container-fluid">

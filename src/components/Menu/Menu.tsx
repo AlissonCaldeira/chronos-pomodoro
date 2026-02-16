@@ -28,10 +28,10 @@ export function Menu() {
        })
     }
 
-useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme) //Altera o valor do atributo no HTML
-    localStorage.setItem('theme', theme)
-}, [theme])  // Executa apenas quando o valor do theme muda
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme) //Altera o valor do atributo no HTML
+        localStorage.setItem('theme', theme)
+    }, [theme])  // Executa apenas quando o valor do theme muda
 
       
     return (
