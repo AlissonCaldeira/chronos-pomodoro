@@ -14,12 +14,12 @@
 .cycleDot{
     width:20px;
     height:20px;
-    background-color:var(--primary );
+    background-color: var(--primary);
     border-radius:50%;
 }
 
 .workTime{
-    background-color:var(--warning);
+    background-color: var(--warning);
 }
 .shortBreakTime{
     background-color: var(--primary);

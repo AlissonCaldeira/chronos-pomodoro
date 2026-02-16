@@ -20,7 +20,7 @@
 
 .input:disabled{
     border-bottom:2px solid var(--disabled) ;
-    colocar:var(--text-muted);
+    color:var(--text-muted);
 }
 
 input::placeholder{
