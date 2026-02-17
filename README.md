@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
+# ⏳ Chronos Pomodoro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web desenvolvida para praticar React com TypeScript utilizando Vite como ferramenta de build.
 
-Currently, two official plugins are available:
+O **Chronos Pomodoro** é um temporizador baseado na técnica Pomodoro, criado para ajudar na organização do tempo, foco e aumento de produtividade.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Tecnologias e Ferramentas
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+### 🧩 Frontend
+- React
+- TypeScript
 
-## Expanding the ESLint configuration
+### ⚙️ Build Tool
+- Vite
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🎨 Estilização
+- CSS
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🧠 Sobre o Projeto
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+A técnica Pomodoro consiste em dividir o tempo em ciclos de foco e descanso:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- 25 minutos de foco
+- 5 minutos de descanso
+- Após 4 ciclos, uma pausa maior
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Este projeto foi desenvolvido com o objetivo de:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Praticar componentização no React
+- Trabalhar com estados e hooks
+- Utilizar TypeScript para tipagem forte
+- Estruturar um projeto moderno com Vite
+
+---
+
+## 📸 Preview
+
+*(Adicione aqui um print da aplicação depois)*
+
+---
+
+## 🛠️ Como Executar o Projeto
+
+### 1️⃣ Clone o repositório
+
+```bash
+git clone https://github.com/seu-usuario/chronos-pomodoro.git
