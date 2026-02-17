@@ -37,12 +37,6 @@ Este projeto foi desenvolvido com o objetivo de:
 
 ---
 
-## 📸 Preview
-
-*(Adicione aqui um print da aplicação depois)*
-
----
-
 ## 🛠️ Como Executar o Projeto
 
 ### 1️⃣ Clone o repositório
