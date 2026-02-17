@@ -35,11 +35,3 @@ Este projeto foi desenvolvido com o objetivo de:
 - Utilizar TypeScript para tipagem forte
 - Estruturar um projeto moderno com Vite
 
----
-
-## 🛠️ Como Executar o Projeto
-
-### 1️⃣ Clone o repositório
-
-```bash
-git clone https://github.com/seu-usuario/chronos-pomodoro.git
