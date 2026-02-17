@@ -1,5 +1,4 @@
 import { Home } from './pages/Home';
-import { NotFound } from './pages/NotFound';
 
 
 import './styles/global.css'
@@ -18,7 +17,7 @@ export function App() { // Exportar o Funcion é mais fácil
                 <div className="content">
                     <section>MENU</section>
                 </div>e componente. OBS: ela não aparece como elemento no inspencionar do navegador */}
-           <NotFound />
+           <Home />
 
             { /* Fins didáticos
             <div className="container-fluid">
