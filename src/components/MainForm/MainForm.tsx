@@ -4,6 +4,7 @@ import { Cycles } from "../Cycles"
 import { DefaultInput } from "../DefaultInput"
 
 export function MainForm() {
+
     return (
         <form className='form' action="">
             <div className="formRow">
@@ -19,6 +20,6 @@ export function MainForm() {
                 <Button icon={<PlayCircleIcon />} />
             </div>
         </form>
-            
+
     )
 }
