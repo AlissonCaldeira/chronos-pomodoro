@@ -1,11 +1,11 @@
 import { Home } from './pages/Home';
 
 import type { TaskStateModel } from './models/TaskStateModel';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import './styles/global.css'
 import './styles/theme.css'
-import { TaskContext } from './contexts/TaskContext';
+import { TaskContext, TaskContextProvider } from './contexts/TaskContext';
 
 const initialState: TaskStateModel = {
     task: [],
@@ -24,10 +24,13 @@ export function App() {
     const [state, setState] = useState<TaskStateModel>(initialState);
 
     return (
-        <TaskContext.Provider value={{ chave: "" }}>
+        <TaskContextProvider value={{ chave: "" }}>
             {/* Todos os componentes filhos irão receber o value */}
             <Home />
-        </TaskContext.Provider>
+        </TaskContextProvider>
     )
 
+}
+export function useTaskContext() {
+    return useContext(TaskContext);
 }
