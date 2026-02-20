@@ -1,10 +1,11 @@
 import { Home } from './pages/Home';
 
-import { TaskStateModel } from './models/TaskStateModel';
+import type { TaskStateModel } from './models/TaskStateModel';
 import { useState } from 'react';
 
 import './styles/global.css'
 import './styles/theme.css'
+import { TaskContext } from './contexts/TaskContext';
 
 const initialState: TaskStateModel = {
     task: [],
@@ -22,8 +23,11 @@ const initialState: TaskStateModel = {
 export function App() {
     const [state, setState] = useState<TaskStateModel>(initialState);
 
-
-    return <Home state={state} setState={setState} />
-
+    return (
+        <TaskContext.Provider value={{ chave: "" }}>
+            {/* Todos os componentes filhos irão receber o value */}
+            <Home />
+        </TaskContext.Provider>
+    )
 
 }
