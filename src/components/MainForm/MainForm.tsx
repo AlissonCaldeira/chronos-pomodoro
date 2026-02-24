@@ -71,9 +71,12 @@ export function MainForm() {
             <div className="formRow">
                 <span>Lorem ipsum dolor sit amet.</span>
             </div>
-            <div className="formRow">
-                <Cycles />
-            </div>
+
+            {state.currentCycle > 0 && ( // Só exibe se a condição for verdadeira
+                <div className="formRow">
+                    <Cycles />
+                </div>)}
+
             <div className="formRow">
                 <Button icon={<PlayCircleIcon />} />
             </div>
