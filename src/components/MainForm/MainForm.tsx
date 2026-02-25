@@ -1,4 +1,4 @@
-import { PlayCircleIcon } from "lucide-react"
+import { PlayCircleIcon, StopCircleIcon } from "lucide-react"
 import { Button } from "../Button"
 import { Cycles } from "../Cycles"
 import { DefaultInput } from "../DefaultInput"
@@ -58,6 +58,24 @@ export function MainForm() {
             }
         })
     }
+
+    function handleInterruptTask(){
+        setState(prevstate => {
+            return {
+                ...prevstate,
+                activeTask: null,
+                secondsRemainig: 0,
+                formattedSecondsRemainig: '00:00',
+                task: prevstate.task.map(task => {
+                    if (prevstate.activeTask && prevstate.activeTask.id === task.id){
+                        return{...task, interruptDate: Date.now()}
+                    }
+                    return task
+                })
+            }
+        })   
+    }
+
     return (
         <form onSubmit={handleCreateNewTask} className='form' action="">
             <div className="formRow">
@@ -80,7 +98,27 @@ export function MainForm() {
                 </div>)}
 
             <div className="formRow">
-                <Button icon={<PlayCircleIcon />} />
+                {!state.activeTask ? (
+                    <Button 
+                    type ='submit'
+                    icon={<PlayCircleIcon />} 
+                    aria-label= 'Iniciar nova tarefa'
+                    title = 'Iniciar nova tarefa'
+                    key='Botão de submit' // Preveni que o React confunda os botões, pode acontecer no React
+                    />
+                    ): (
+                        <Button 
+                    type ='button'
+                    icon={<StopCircleIcon />} 
+                    color = 'red'
+                    aria-label= 'Parar tarefa atual'
+                    title = 'Parar tarefa atual'
+                    onClick = {handleInterruptTask}
+                    key = 'botão de interrupt' // Preveni que o React confunda os botões, pode acontecer no React
+                    />
+                    )} 
+                
+                    
             </div>
         </form>
 
