@@ -9,7 +9,7 @@ export function CountDown() {
     const { state } = useTaskContext();
     return (
         <div className={styles.container}>
-            {state.formattedSecondsRemainig}
+            {state.formattedSecondsRemaining}
         </div>
     )
 }

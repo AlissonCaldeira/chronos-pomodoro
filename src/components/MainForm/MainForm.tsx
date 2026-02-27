@@ -7,11 +7,11 @@ import type { TaskModel } from "../../models/TaskModel";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { getNextCycle } from "../../utils/getNextCycle";
 import { getNextCycleType } from "../../utils/getNextCycleType";
-import { formatSecondsToMinutes } from "../../utils/formatSecondsToMinutes";
+import { TascActionTypes } from "../../contexts/TaskContext/TaskActions";
 
 export function MainForm() {
 
-    const { state, setState } = useTaskContext();
+    const { state, dispatchTask } = useTaskContext();
 
     const taskNameInput = useRef<HTMLInputElement>(null);
 
@@ -41,39 +41,14 @@ export function MainForm() {
             type: nextCycleType,
         };
 
-        const secondsRemaining = newTask.duration * 60;
 
-        setState(prevstate => {
-            return {
-                ...prevstate,
-                config: { ...prevstate.config },
-                activeTask: newTask,
-                currentCycle: nextCycle,
-                secondsRemaining, // Conferir
-                // Quando tem uma variavél com o mesmo nome da chave não é necessário atribuir o valor aqui a ela
-                formattedSecondsRemainig: formatSecondsToMinutes(secondsRemaining), // Conferir
-                task: [...prevstate.task, newTask],
-                // Os arrays você mexe igual com os states, pega o valor anterior e cria um novo
-                // Nunca altere diretamente valores mutáveis 
-            }
-        })
+        dispatchTask({ type: TascActionTypes.START_TASK, payload: newTask })
+
+
     }
 
-    function handleInterruptTask(){
-        setState(prevstate => {
-            return {
-                ...prevstate,
-                activeTask: null,
-                secondsRemainig: 0,
-                formattedSecondsRemainig: '00:00',
-                task: prevstate.task.map(task => {
-                    if (prevstate.activeTask && prevstate.activeTask.id === task.id){
-                        return{...task, interruptDate: Date.now()}
-                    }
-                    return task
-                })
-            }
-        })   
+    function handleInterruptTask() {
+        dispatchTask({ type: TascActionTypes.INTERRUPT_TASK })
     }
 
     return (
@@ -84,9 +59,9 @@ export function MainForm() {
                     labelText='Task'
                     type='text'
                     placeholder='Digite Algo'
-                    ref={taskNameInput} 
-                    disabled = {!!state.activeTask}    
-                    />
+                    ref={taskNameInput}
+                    disabled={!!state.activeTask}
+                />
             </div>
             <div className="formRow">
                 <span>Lorem ipsum dolor sit amet.</span>
@@ -99,26 +74,26 @@ export function MainForm() {
 
             <div className="formRow">
                 {!state.activeTask ? (
-                    <Button 
-                    type ='submit'
-                    icon={<PlayCircleIcon />} 
-                    aria-label= 'Iniciar nova tarefa'
-                    title = 'Iniciar nova tarefa'
-                    key='Botão de submit' // Preveni que o React confunda os botões, pode acontecer no React
+                    <Button
+                        type='submit'
+                        icon={<PlayCircleIcon />}
+                        aria-label='Iniciar nova tarefa'
+                        title='Iniciar nova tarefa'
+                        key='Botão de submit' // Preveni que o React confunda os botões, pode acontecer no React
                     />
-                    ): (
-                        <Button 
-                    type ='button'
-                    icon={<StopCircleIcon />} 
-                    color = 'red'
-                    aria-label= 'Parar tarefa atual'
-                    title = 'Parar tarefa atual'
-                    onClick = {handleInterruptTask}
-                    key = 'botão de interrupt' // Preveni que o React confunda os botões, pode acontecer no React
+                ) : (
+                    <Button
+                        type='button'
+                        icon={<StopCircleIcon />}
+                        color='red'
+                        aria-label='Parar tarefa atual'
+                        title='Parar tarefa atual'
+                        onClick={handleInterruptTask}
+                        key='botão de interrupt' // Preveni que o React confunda os botões, pode acontecer no React
                     />
-                    )} 
-                
-                    
+                )}
+
+
             </div>
         </form>
 
