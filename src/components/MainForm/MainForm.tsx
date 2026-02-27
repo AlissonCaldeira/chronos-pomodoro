@@ -8,6 +8,7 @@ import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { getNextCycle } from "../../utils/getNextCycle";
 import { getNextCycleType } from "../../utils/getNextCycleType";
 import { TascActionTypes } from "../../contexts/TaskContext/TaskActions";
+import { Tips } from "../Tips";
 
 export function MainForm() {
 
@@ -18,6 +19,8 @@ export function MainForm() {
     // ciclos
     const nextCycle = getNextCycle(state.currentCycle);
     const nextCycleType = getNextCycleType(nextCycle);
+
+    //tips
 
     function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -64,7 +67,7 @@ export function MainForm() {
                 />
             </div>
             <div className="formRow">
-                <span>Lorem ipsum dolor sit amet.</span>
+                <Tips />
             </div>
 
             {state.currentCycle > 0 && ( // Só exibe se a condição for verdadeira
