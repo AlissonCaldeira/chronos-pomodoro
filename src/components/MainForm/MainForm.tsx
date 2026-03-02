@@ -47,7 +47,6 @@ export function MainForm() {
 
         dispatchTask({ type: TascActionTypes.START_TASK, payload: newTask })
 
-
     }
 
     function handleInterruptTask() {
