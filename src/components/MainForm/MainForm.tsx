@@ -7,7 +7,7 @@ import type { TaskModel } from "../../models/TaskModel";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { getNextCycle } from "../../utils/getNextCycle";
 import { getNextCycleType } from "../../utils/getNextCycleType";
-import { TascActionTypes } from "../../contexts/TaskContext/TaskActions";
+import { TaskActionTypes } from "../../contexts/TaskContext/TaskActions";
 import { Tips } from "../Tips";
 
 export function MainForm() {
@@ -45,12 +45,12 @@ export function MainForm() {
         };
 
 
-        dispatchTask({ type: TascActionTypes.START_TASK, payload: newTask })
+        dispatchTask({ type: TaskActionTypes.START_TASK, payload: newTask })
 
     }
 
     function handleInterruptTask() {
-        dispatchTask({ type: TascActionTypes.INTERRUPT_TASK })
+        dispatchTask({ type: TaskActionTypes.INTERRUPT_TASK })
     }
 
     return (
