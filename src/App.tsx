@@ -1,10 +1,10 @@
 import { TaskContextProvider } from './contexts/TaskContext/TaskContextProvider';
-import { Home } from './pages/Home';
+import { MyToastContainer } from './components/MyToastContainer';
+import { MainRouter } from './routers/MainRouter';
 
 
 import './styles/global.css'
 import './styles/theme.css'
-import { MyToastContainer } from './components/MyToastContainer';
 
 
 export function App() {
@@ -12,7 +12,7 @@ export function App() {
     return (
         <TaskContextProvider >
             <MyToastContainer>
-                <Home />
+                <MainRouter />
             </MyToastContainer>
         </TaskContextProvider>
     )
