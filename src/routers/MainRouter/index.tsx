@@ -3,6 +3,7 @@ import { Home } from "../../pages/Home";
 import { AboutPomodoro } from "../../pages/AboutPomodoro";
 import { NotFound } from "../../pages/NotFound";
 import { useEffect } from "react";
+import { History } from "../../pages/History";
 
 
 // Função para a página subir quando trocar de página
@@ -23,6 +24,7 @@ export function MainRouter() {
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<Home />} />
+                <Route path='/history/' element={<History />} />
                 <Route path='/about-pomodoro/' element={<AboutPomodoro />} />
 
                 <Route path='*' element={<NotFound />} />
