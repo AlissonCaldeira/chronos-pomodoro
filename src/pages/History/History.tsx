@@ -9,11 +9,12 @@ import { formatDate } from "../../utils/formatDate";
 
 import styles from './styles.module.css'
 import { getTaskStatus } from "../../utils/getTaskStatus";
+import { sortTasks } from "../../utils/sortTasks";
 
 export function History() {
 
     const { state } = useTaskContext();
-
+    const sortedTasks = sortTasks({ task: state.task })
 
     return (
         <MainTemplate>
@@ -41,7 +42,7 @@ export function History() {
                             </tr>
                         </thead>
                         <tbody>
-                            {state.task.map((task) => {
+                            {sortedTasks.map((task) => {
                                 const taskTypeDictionary = {
                                     workTime: 'Foco',
                                     shortBreakTime: 'Descanso curto',
