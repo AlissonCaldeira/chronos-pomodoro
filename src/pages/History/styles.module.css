@@ -23,6 +23,17 @@
 
 .resposiveTable th{
     background-color: var(--gray-600);
+
+   
+}
+
+.thSort {
+    cursor: pointer;
+    transition: all 0.1s ease-in-out
+}
+
+.thSort:hover {
+   filter: brightness(80%);
 }
 
 .resposiveTable td{
