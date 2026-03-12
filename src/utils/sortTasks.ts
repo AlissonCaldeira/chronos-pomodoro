@@ -26,7 +26,7 @@ export function sortTasks({
   field = 'startDate', // Se o campo não for informado, usamos 'startDate' como padrão
   direction = 'desc', // Se a direção não for informada, usamos 'desc' (decrescente)
   task = [], // Se nenhuma lista for passada, usamos uma lista vazia
-}: SortTaskOptions): TaskModel[] {
+}: SortTasksOptions): TaskModel[] {
   return [...task].sort((a, b) => {
     // Pegamos o valor da propriedade escolhida (ex: startDate) em cada tarefa
     const aValue = a[field];
