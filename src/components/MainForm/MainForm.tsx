@@ -2,7 +2,7 @@ import { PlayCircleIcon, StopCircleIcon } from "lucide-react"
 import { Button } from "../Button"
 import { Cycles } from "../Cycles"
 import { DefaultInput } from "../DefaultInput"
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import type { TaskModel } from "../../models/TaskModel";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { getNextCycle } from "../../utils/getNextCycle";
@@ -31,6 +31,12 @@ export function MainForm() {
 
         if (taskNameInput.current == null) return;
 
+        const maxHistoryElements = 100;
+        if (state.task.length > maxHistoryElements - 1) {
+
+            toastifyAdapter.error(`Número limite de ${maxHistoryElements} atingido por favor apague o histórico para continuar`)
+            return;
+        }
         const newTaskName = taskNameInput.current.value.trim();
 
         if (!newTaskName) {
@@ -59,6 +65,7 @@ export function MainForm() {
         toastifyAdapter.error('Tarefa Interrompida')
         dispatchTask({ type: TaskActionTypes.INTERRUPT_TASK })
     }
+
 
     return (
         <form onSubmit={handleCreateNewTask} className='form' action="">

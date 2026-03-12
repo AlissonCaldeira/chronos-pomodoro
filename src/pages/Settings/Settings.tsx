@@ -4,7 +4,7 @@ import { Container } from "../../components/Container";
 import { DefaultInput } from "../../components/DefaultInput";
 import { Heading } from "../../components/Heading";
 import { MainTemplate } from "../../templates/MainTemplate";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { toastifyAdapter } from "../../adapters/toastifyAdapter";
 import { TaskActionTypes } from "../../contexts/TaskContext/TaskActions";
@@ -12,6 +12,10 @@ import { TaskActionTypes } from "../../contexts/TaskContext/TaskActions";
 
 
 export function Settings() {
+    useEffect(() => {
+        document.title = 'Configurações - Chronos Pomodoro'
+    }, [])
+
     const { state, dispatchTask } = useTaskContext();
 
     const workTimeInputRef = useRef<HTMLInputElement>(null)

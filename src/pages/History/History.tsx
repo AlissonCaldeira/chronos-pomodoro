@@ -13,10 +13,11 @@ import { toastifyAdapter } from "../../adapters/toastifyAdapter";
 
 
 import styles from './styles.module.css'
+import type { TaskStateModel } from "../../models/TaskStateModel";
 
 export function History() {
 
-    const { state, dispatchTask } = useTaskContext();
+    const { state, dispatchTask, setState } = useTaskContext();
     const hasTasks = state.task.length > 0
     const [confirmClearHistory, setConfirmClearHistory] = useState(false)
 
@@ -29,6 +30,9 @@ export function History() {
     })
 
     useEffect(() => {
+
+
+
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setSortTaskOptions(prevState => ({
             ...prevState,
@@ -41,6 +45,8 @@ export function History() {
     }, [state.task])
 
     useEffect(() => {
+
+
         if (!confirmClearHistory) return;
 
 
@@ -55,6 +61,10 @@ export function History() {
         return () => {
             toastifyAdapter.dismiss();
         }
+    }, [])
+
+    useEffect(() => {
+        document.title = 'Histórico - Chronos Pomodoro'
     }, [])
 
     function handleSortTasks({ field }: Pick<SortTasksOptions, 'field'>) {
