@@ -13,11 +13,10 @@ import { toastifyAdapter } from "../../adapters/toastifyAdapter";
 
 
 import styles from './styles.module.css'
-import type { TaskStateModel } from "../../models/TaskStateModel";
 
 export function History() {
 
-    const { state, dispatchTask, setState } = useTaskContext();
+    const { state, dispatchTask } = useTaskContext();
     const hasTasks = state.task.length > 0
     const [confirmClearHistory, setConfirmClearHistory] = useState(false)
 
