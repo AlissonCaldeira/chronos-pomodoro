@@ -17,7 +17,7 @@ export function MainForm() {
 
     const taskNameInput = useRef<HTMLInputElement>(null);
     const lastTaskName = state.task[state.task.length - 1]?.name || '';
-
+    const maxHistoryElements = 2;
 
     // ciclos
     const nextCycle = getNextCycle(state.currentCycle);
@@ -31,12 +31,6 @@ export function MainForm() {
 
         if (taskNameInput.current == null) return;
 
-        const maxHistoryElements = 100;
-        if (state.task.length > maxHistoryElements - 1) {
-
-            toastifyAdapter.error(`Número limite de ${maxHistoryElements} atingido por favor apague o histórico para continuar`)
-            return;
-        }
         const newTaskName = taskNameInput.current.value.trim();
 
         if (!newTaskName) {

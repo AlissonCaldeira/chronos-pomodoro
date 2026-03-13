@@ -7,20 +7,33 @@ import { TaskActionTypes, type TaskActionModel } from "./TaskActions";
 export function taskReducer(state: TaskStateModel, action: TaskActionModel){
 
     switch(action.type){
-        case TaskActionTypes.START_TASK:{ 
-            const newTask = action.payload
-            const nextCycle = getNextCycle(state.currentCycle);
-            const secondsRemaining = newTask.duration * 60;
+      case TaskActionTypes.START_TASK: { 
+    const newTask = action.payload
+    const nextCycle = getNextCycle(state.currentCycle);
+    const secondsRemaining = newTask.duration * 60;
 
-            return {
-                ...state,
-                activeTask: newTask,
-                currentCycle: nextCycle,
-                secondsRemaining,
-                formattedSecondsRemaining: formatSecondsToMinutes(secondsRemaining),
-                task: [...state.task, newTask],
-            }; 
-        }
+    const maxHistoryElements = 100;
+
+    let tasks = [...state.task];
+
+    if (tasks.length >= maxHistoryElements) {
+        const oldestTask = tasks.reduce((oldest, current) => {
+            return current.startDate < oldest.startDate ? current : oldest;
+        });
+
+        tasks = tasks.filter(task => task.id !== oldestTask.id);
+    }
+
+    return {
+        ...state,
+        activeTask: newTask,
+        currentCycle: nextCycle,
+        secondsRemaining,
+        formattedSecondsRemaining: formatSecondsToMinutes(secondsRemaining),
+        task: [...tasks, newTask],
+    }; 
+}
+        
         case TaskActionTypes.INTERRUPT_TASK:{
             return {
                 ...state,
