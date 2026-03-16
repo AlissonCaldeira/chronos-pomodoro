@@ -17,7 +17,6 @@ export function MainForm() {
 
     const taskNameInput = useRef<HTMLInputElement>(null);
     const lastTaskName = state.task[state.task.length - 1]?.name || '';
-    const maxHistoryElements = 2;
 
     // ciclos
     const nextCycle = getNextCycle(state.currentCycle);
